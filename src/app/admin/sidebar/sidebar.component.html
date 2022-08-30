@@ -1,0 +1,31 @@
+
+<div class="sidebar-wrapper">
+    <div class="logo">
+        <a href="http://www.creative-tim.com" class="simple-text">
+            <div >
+                <img src=""/>
+            </div>
+        </a>
+    </div>
+    <ul class="nav responsive-nav">
+        
+       <li *ngIf="isMobileMenu()">
+           <a>
+                <i class="fa fa-search"></i>
+				<p class="hidden-lg hidden-md">Search</p>
+            </a>
+        </li>
+        <li *ngIf="isMobileMenu()">
+            <a>
+                <p>Se déconnecter</p>
+            </a>
+        </li>
+        <li class="separator hidden-lg hidden-md" *ngIf="isMobileMenu()"></li>
+        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}}">
+            <a  [routerLink]="[menuItem.path]">
+                <i class="{{menuItem.icon}}"></i>
+                <p>{{menuItem.title}}</p>
+            </a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,75 @@
+<div class="main-content" >
+    <div class="container-fluid">
+  
+
+<form [formGroup]="projectForm" (submit)="submit()">
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Nom Du Projet</label>
+                <input formControlName="nom" type="text" class="form-control" placeholder="Nom" >
+            <div *ngIf="projectForm.controls['nom'].touched">
+                <label *ngIf="projectForm.controls['nom'].invalid" style="color:red ;" class="control-label" >exigé</label>
+            </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Entité</label>
+                <input formControlName="entite" type="text" class="form-control" placeholder="Entité">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label>Description</label>
+                <textarea formControlName="description" style="height: 100px;" class="form-control">
+                </textarea>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="dateDebut" >Date Début</label>
+                <input formControlName="date_debut" type="date" id="dateDebut" class="form-control">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="dateFin">Date Fin</label>
+                <input formControlName="date_fin" type="date" id="dateFin" class="form-control">
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>Budget</label>
+                <input formControlName="budget" type="number" class="form-control" placeholder="Budget">
+            </div>
+        </div>
+
+
+        <!-- List of competences -->
+        <div class="form-group">
+
+            <select class="form-control select" multiple>
+               <input type="checkbox"> <option value="1">One</option>
+               <input type="checkbox"> <option value="2">Two</option>
+              </select>
+
+        </div>
+
+
+    </div>
+    <a href="/#/projet"><button class="btn btn-danger btn-fill pull-left" type="button" data-toggle="tooltip" data-placement="top" title="Retour"><i class="fa fa-arrow-left"></i> Revenir à la liste </button></a>
+    <button type="submit" class="btn btn-warning btn-fill pull-left" style="margin: left 100px;"><i class="fa fa-plus"></i> Ajouter </button>
+    <div class="clearfix"></div>
+</form>
+
+</div>
+</div>

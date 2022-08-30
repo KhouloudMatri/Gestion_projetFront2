@@ -1,0 +1,52 @@
+<div class="main-content">
+    <div class="container-fluid">
+      
+        <div class="row">
+
+          
+
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">   
+                        
+                        <h4 class="title" color="red">Table Des Ressources</h4>
+                        <br>
+                   
+                    </div>
+                    <br>
+                    <br>
+  
+                    <div class="content table-responsive table-full-width">
+                          <table class="table table-hover table-striped">
+                                <thead>
+                                    <th> # </th>
+                                    <th> Nom </th>
+                                    <th> Prénom </th>
+                                    <th> Numéro Télèphone </th>
+                                    <th> Adresse mail </th>
+                                    <th> Action </th>
+
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let ressource of ressourceList">
+                                        <td>{{ressource.id}} </td>
+                                        <td>{{ressource.nom}} </td>
+                                        <td>{{ressource.prenom}}</td>
+                                        <td>{{ressource.num_tel}}</td>
+                                        <td>{{ressource.email}} </td>
+                                
+                                        <button (click)="delete(ressource.id)" class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Supprimer"><i class="fa fa-trash"></i></button>
+                                      </tr>
+
+                                </tbody>
+                          </table>
+
+                    </div>
+
+                </div>
+            </div>
+   
+    
+        </div>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+<div class="main-content" >
+    <div class="container-fluid">
+  
+
+<form [formGroup]="phaseForm" (submit)="submit()">
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Nom </label>
+                <input formControlName="nom_phase" type="text" class="form-control" placeholder="Nom de la phase" >
+            <div *ngIf="phaseForm.controls['nom_phase'].touched">
+                <label *ngIf="phaseForm.controls['nom_phase'].invalid" style="color:red ;" class="control-label" >exigé</label>
+            </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Duree</label>
+                <input formControlName="duree" type="text" class="form-control" placeholder="Durée">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="dateDebutPhase" >Date Début</label>
+                <input formControlName="date_debut_phase" type="date" id="dateDebutPhase" class="form-control">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="dateFinPhase">Date Fin</label>
+                <input formControlName="date_fin_phase" type="date" id="dateFinPhase" class="form-control">
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>Etat</label>
+                <input formControlName="etat" type="text" class="form-control" >
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+
+        <select  formControlName="projet" >
+            <option *ngFor="let projet of List" value="{{projet.id}}">{{projet.nom}}</option>
+          </select>
+          </div>
+          </div>
+    </div>
+
+    <a href="/#/phase"><button class="btn btn-danger btn-fill pull-left" type="button" data-toggle="tooltip" data-placement="top" title="Retour"><i class="fa fa-arrow-left"></i> Revenir à la liste </button></a>
+    <button type="submit" class="btn btn-warning btn-fill pull-left" style="margin: left 100px;"><i class="fa fa-plus"></i> Ajouter </button>
+    <div class="clearfix"></div>
+</form>
+
+</div>
+</div>

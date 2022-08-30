@@ -1,0 +1,62 @@
+<div class="main-content">
+    <div class="container-fluid">
+      
+        <div class="row">
+
+          
+
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">   
+                        
+                        <h4 class="title" color="red">Table Des Phases </h4>
+                        <br>
+
+                        <a href="/#/addPhase"><button class="btn btn-warning btn-fill pull-left" type="button" data-toggle="tooltip" data-placement="top" title="Ajouter une phase"><i class="fa fa-plus"></i> Nouvelle Phase </button></a>
+
+                   
+                    </div>
+                    <br>
+                    <br>
+  
+                    <div class="content table-responsive table-full-width">
+                          <table class="table table-hover table-striped">
+                                <thead>
+                                    <th> # </th>
+                                    <th> Nom </th>
+                                    <th> Durée </th>
+                                    <th> Date Debut </th>
+                                    <th> Date Fin </th>
+                                    <th> Etat </th> 
+                                    <th>Projet</th>
+                                  
+                                   
+                                    <th> Actions </th>    
+                                </thead>
+                                <tbody>
+                                  
+                                    <tr *ngFor="let phase of phaseList">
+                                        <td>{{phase.id}} </td>
+                                        <td>{{phase.nom_phase}} </td>
+                                        <td>{{phase.duree}}</td>
+                                        <td>{{phase.date_debut_phase}}</td>
+                                        <td>{{phase.date_fin_phase}} </td>
+                                        <td>{{phase.etat}}</td>
+                                        <td>{{phase.projet['id']}}</td>
+
+                                        <a href="/#/editPhase/{{phase.id}}"><button class="btn btn-warning btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Editer"><i class="fa fa-edit"></i></button></a>
+                                        <button (click)="delete(phase.id)" class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Supprimer"><i class="fa fa-trash"></i></button>
+                                      </tr>
+
+                                </tbody>
+                          </table>
+
+                    </div>
+
+                </div>
+            </div>
+   
+    
+        </div>
+    </div>
+</div>

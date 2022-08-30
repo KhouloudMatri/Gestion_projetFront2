@@ -1,0 +1,59 @@
+<div class="main-content" >
+    <div class="container-fluid">
+
+<form [formGroup]="projectForm" (submit)="submit()">
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Nom</label>
+                <input formControlName="nom" type="text" [(value)]='nom' class="form-control" placeholder="Nom" >
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Entité</label>
+                <input formControlName="entite" type="text" [(value)]='entite' class="form-control" placeholder="Entité">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label>Description</label>
+                <textarea formControlName="description"  [(value)]='description' style="height: 100px;" class="form-control">
+                </textarea>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="dateDebut" >Date Debut</label>
+                <input formControlName="date_debut" type="date" [(value)]='dateDebut' id="dateDebut" class="form-control">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="dateFin">Date Fin</label>
+                <input formControlName="date_fin" type="date" [(value)]='dateFin' id="dateFin" class="form-control">
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>Budget</label>
+                <input formControlName="budget" type="number" [(value)]='budget' class="form-control" placeholder="Budget">
+            </div>
+        </div>
+    </div>
+    
+    <a href="/#/projet"><button class="btn btn-danger btn-fill pull-left" type="button" data-toggle="tooltip" data-placement="top" title="Retour"><i class="fa fa-arrow-left"></i> Revenir à la liste </button></a>
+    <button type="submit" class="btn btn-warning btn-fill pull-left" style="margin: left 100px;"><i class="fa fa-save"></i> Sauvegarder </button>
+    <div class="clearfix"></div>
+</form>
+
+</div>
+</div>

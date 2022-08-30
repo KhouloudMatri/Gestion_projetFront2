@@ -1,0 +1,61 @@
+
+
+    <head>
+        <style type="text/css">
+            #bg {
+              position: fixed; 
+              top: -50%; 
+              left: -50%; 
+              width: 200%; 
+              height: 200%;
+          }
+          #bg img {
+              position: absolute; 
+              top: 0; 
+              left: 0; 
+              right: 0; 
+              bottom: 0; 
+              margin: auto; 
+              min-width: 50%;
+              min-height: 50%;
+          }
+      </style>
+    </head>
+    <body> 
+        
+     <div id="bg">
+      <img src="assets/img/attijari.jpg" alt="">
+    </div>
+    
+    </body> 
+
+ <div class="container">
+    <div class="row"style="margin-top: 80px;">
+        <!--<div class="col-md-6">
+           <img src="../../../assets/A1.png" height="90%" width="100%"> </div >-->
+        
+        <div class="col-md-10">
+            <h3 class="text-success text-center"style="margin-bottom: -60px;"><b style="color:rgb(248, 157, 20); font-size: 2em;  " > Welcome </b></h3>
+
+            <form [formGroup]="loginForm" class="mt-5 p-5">
+                <h5 class="text-primary mb-3" style="color: rgb(255, 255, 255)!important; font-size: 2em; ">Login </h5>
+                <div class="form-floating mb-5">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Username" name="username" formControlName="username">
+                    <label for="floatingInput" style="color: rgb(255, 255, 255)">Email address</label>
+                </div>
+                  <div class="form-floating mb-5">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" formControlName="password">
+                    <label for="floatingPassword" style="color: rgb(255, 255, 255) " >Password</label>
+                  </div>
+                  
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button class="btn btn-outline-success me-md-2" type="button" style="color: rgb(255, 255, 255) "  (click)="login()" >Login</button>
+                  </div>
+
+                  <a routerLink="/signup"  style="color: rgb(255, 255, 255) ">Need account ? </a>
+            </form>
+
+        </div>
+        
+    </div>
+</div>

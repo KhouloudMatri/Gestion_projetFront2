@@ -1,0 +1,80 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div align="center" class="card">
+                    <div class="header">
+                        <h4 class="title">Bienvenue!</h4>
+                    </div>
+                    <div class="content">
+
+                      <!-- {{ressource | json }} -->
+
+                        <form (ngSubmit)="formSubmit()">
+
+                            <div  class="row" >
+                                <div class="col-md-5">
+                                    <div class="form-group" >
+                                        <label>Nom</label>
+                                        <input [(ngModel)]="ressource.nom" name="nom" type="text" class="form-control" placeholder="Nom" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row" >
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label>Prénom</label>
+                                        <input [(ngModel)]="ressource.prenom" name="prenom" type="text" class="form-control" placeholder="Prenom" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row" >
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label>Numéro De Téléphone</label>
+                                        <input [(ngModel)]="ressource.num_tel" name="num_tel" type="number" class="form-control" placeholder="Numéro téléphone" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row" >
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Adresse email</label>
+                                        <input [(ngModel)]="ressource.email" name="email" type="email" class="form-control" placeholder="Email" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row" >
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label>Login</label>
+                                        <input [(ngModel)]="ressource.login" name="login" type="text" class="form-control" placeholder="Login" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row" >
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label>Mot De Passe</label>
+                                        <input [(ngModel)]="ressource.mdp" name="mdp" type="password" class="form-control" placeholder="Mot de passe" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                               
+
+                            <button type="submit" class="btn btn-warning btn-fill pull-center">S'inscrire</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

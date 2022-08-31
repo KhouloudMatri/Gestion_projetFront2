@@ -12,7 +12,7 @@
                         <h4 class="title" color="red">Table Des Compétences </h4>
                         <br>
 
-                        <a href="/#/addCompetence"><button class="btn btn-warning btn-fill pull-left" type="button" data-toggle="tooltip" data-placement="top" title="Ajouter une Compétence"><i class="fa fa-plus"></i> Nouvelle Compétence </button></a>
+                        <a href="admin/addCompetence"><button class="btn btn-warning btn-fill pull-left" type="button" data-toggle="tooltip" data-placement="top" title="Ajouter une Compétence"><i class="fa fa-plus"></i> Nouvelle Compétence </button></a>
 
                    
                     </div>
@@ -33,7 +33,7 @@
                                         <td> {{competence.id}} </td>
                                         <td> {{competence.nom}} </td>
             
-                                        <a href="/#/editCompetence/{{competence.id}}"><button class="btn btn-warning btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Editer"><i class="fa fa-edit"></i></button></a>
+                                        <a href="admin/editCompetence/{{competence.id}}"><button class="btn btn-warning btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Editer"><i class="fa fa-edit"></i></button></a>
                                         <button (click)="delete(competence.id)" class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Supprimer"><i class="fa fa-trash"></i></button>
                                       </tr>
 

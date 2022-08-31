@@ -29,6 +29,7 @@ import { RessourceComponent } from './admin/ressource/ressource.component';
 import { RoleComponent } from './admin/role/role.component';
 import { LoginComponent } from './admin/login/login.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import { AddRessourceComponent } from './add-ressource/add-ressource.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { LayoutModule } from '@angular/cdk/layout';
    LoginComponent,
     RessourceComponent,
     RoleComponent,
+    AddRessourceComponent,
     
    
   ],

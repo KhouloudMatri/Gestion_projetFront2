@@ -22,38 +22,56 @@
         </div>
     </div>
 
+    <br>
+
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div class="form-group">
                 <label for="dateDebutPhase" >Date Début</label>
                 <input formControlName="date_debut_phase" type="date" id="dateDebutPhase" class="form-control">
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div class="form-group">
                 <label for="dateFinPhase">Date Fin</label>
                 <input formControlName="date_fin_phase" type="date" id="dateFinPhase" class="form-control">
             </div>
         </div>
 
-        <div class="col-md-4">
-            <div class="form-group">
-                <label>Etat</label>
-                <input formControlName="etat" type="text" class="form-control" >
+        <br>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="etat"> Etat </label> 
+                    <select class="form-select" aria-label="Default select example" formControlName="etat" class="form-control" >
+                        <option value="En Cours"> En Cours </option>
+                        <option value="Terminé"> Terminé </option>
+                    </select>
+                </div>
             </div>
+        
+    
+    
+    
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="projet">Projet</label>
+                    <select class="form-select" aria-label="Default select example" formControlName="projet" class="form-control" >
+                <option *ngFor="let projet of List" value="{{projet.id}}">{{projet.nom}}</option>
+              </select>
+              </div>
+            </div>
+      
+
         </div>
 
-        <div class="col-md-4">
-            <div class="form-group">
-
-        <select  formControlName="projet" >
-            <option *ngFor="let projet of List" value="{{projet.id}}">{{projet.nom}}</option>
-          </select>
-          </div>
-          </div>
     </div>
+  
 
-    <a href="/#/phase"><button class="btn btn-danger btn-fill pull-left" type="button" data-toggle="tooltip" data-placement="top" title="Retour"><i class="fa fa-arrow-left"></i> Revenir à la liste </button></a>
+        <br>
+
+    <a href="admin/phase"><button class="btn btn-danger btn-fill pull-left" type="button" data-toggle="tooltip" data-placement="top" title="Retour"><i class="fa fa-arrow-left"></i> Revenir à la liste </button></a>
     <button type="submit" class="btn btn-warning btn-fill pull-left" style="margin: left 100px;"><i class="fa fa-plus"></i> Ajouter </button>
     <div class="clearfix"></div>
 </form>

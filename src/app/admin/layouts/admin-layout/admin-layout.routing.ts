@@ -19,6 +19,7 @@ import { EditPhaseComponent } from '../../edit-phase/edit-phase.component';
 import { RessourceComponent } from '../../ressource/ressource.component';
 import { RoleComponent } from '../../role/role.component';
 
+
 export const AdminLayoutRoutes: Routes = [
 
     
@@ -40,6 +41,7 @@ export const AdminLayoutRoutes: Routes = [
     { path:'editPhase/:id',      component:EditPhaseComponent },
     { path:'ressource',      component:RessourceComponent },
     { path:'role',      component:RoleComponent }
+ 
 
     
    

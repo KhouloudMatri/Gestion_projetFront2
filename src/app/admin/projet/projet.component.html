@@ -12,7 +12,7 @@
                         <h4 class="title" color="red">Table De Projets </h4>
                         <br>
 
-                        <a href="/#/addProject"><button class="btn btn-warning btn-fill pull-left" type="button" data-toggle="tooltip" data-placement="top" title="Ajouter un projet"><i class="fa fa-plus"></i> Nouveau Projet </button></a>
+                        <a href="admin/addProject"><button class="btn btn-warning btn-fill pull-left" type="button" data-toggle="tooltip" data-placement="top" title="Ajouter un projet"><i class="fa fa-plus"></i> Nouveau Projet </button></a>
 
                    
                     </div>
@@ -41,7 +41,7 @@
                                         <td>{{project.date_debut}}</td>
                                         <td> {{project.date_fin}} </td>
                                         <td>{{project.budget}} dt</td>
-                                        <a href="/#/editProject/{{project.id}}"><button class="btn btn-warning btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Editer"><i class="fa fa-edit"></i></button></a>
+                                        <a href="admin/editProject/{{project.id}}"><button class="btn btn-warning btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Editer"><i class="fa fa-edit"></i></button></a>
                                         <button (click)="delete(project.id)" class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Supprimer"><i class="fa fa-trash"></i></button>
                                       </tr>
 

@@ -3,14 +3,14 @@
       
         <div class="row">
 
-          
-
             <div class="col-md-12">
                 <div class="card">
                     <div class="header">   
                         
                         <h4 class="title" color="red">Table Des Ressources</h4>
                         <br>
+
+                        <a href="admin/addRessource"><button class="btn btn-warning btn-fill pull-left" type="button" data-toggle="tooltip" data-placement="top" title="Ajouter une ressource"><i class="fa fa-plus"></i> Nouvelle Ressource </button></a>
                    
                     </div>
                     <br>
@@ -24,18 +24,23 @@
                                     <th> Prénom </th>
                                     <th> Numéro Télèphone </th>
                                     <th> Adresse mail </th>
+                                    <th> Role </th>
+                                    <th> Projet</th>
                                     <th> Action </th>
 
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let ressource of ressourceList">
-                                        <td>{{ressource.id}} </td>
-                                        <td>{{ressource.nom}} </td>
-                                        <td>{{ressource.prenom}}</td>
-                                        <td>{{ressource.num_tel}}</td>
-                                        <td>{{ressource.email}} </td>
-                                
-                                        <button (click)="delete(ressource.id)" class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Supprimer"><i class="fa fa-trash"></i></button>
+                                    <tr *ngFor="let user of userList">
+                                        <td>{{user.id}} </td>
+                                        <td>{{user.nom}} </td>
+                                        <td>{{user.prenom}}</td>
+                                        <td>{{user.telephone}}</td>
+                                        <td>{{user.email}} </td>
+                                        <td>{{user.role}} </td>
+                                        <td>{{user.projet['id']}}</td>
+
+                                        <a href="admin/editRessource/{{user.id}}"><button class="btn btn-warning btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Editer"><i class="fa fa-edit"></i></button></a>
+                                        <button (click)="delete(user.id)" class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Supprimer"><i class="fa fa-trash"></i></button>
                                       </tr>
 
                                 </tbody>

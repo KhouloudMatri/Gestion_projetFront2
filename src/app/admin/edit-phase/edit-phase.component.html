@@ -1,1 +1,60 @@
-<p>edit-phase works!</p>
+<div class="main-content" >
+    <div class="container-fluid">
+
+<form [formGroup]="phaseForm" (submit)="submit()">
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Nom</label>
+                <input formControlName="nom_phase" type="text"   class="form-control" placeholder="Nom" >
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Durée</label>
+                <input formControlName="duree" type="text"  class="form-control" placeholder="Durée">
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="date_debut_phase" >Date Début</label>
+                <input formControlName="date_debut_phase" type="date" id="date_debut_phase"  class="form-control">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label >Date Fin</label>
+                <input formControlName="date_fin_phase" type="date" class="form-control">
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="etat"> Etat </label> 
+                    <select class="form-select" aria-label="Default select example" formControlName="etat"  class="form-control" >
+                        <option value="En Cours"> En Cours </option>
+                        <option value="Terminé"> Terminé </option>
+                    </select>
+                </div>
+            </div>
+    </div>
+
+    </div>
+    
+    <a href="admin/phase"><button class="btn btn-danger btn-fill pull-left" type="button" data-toggle="tooltip" data-placement="top" title="Retour"><i class="fa fa-arrow-left"></i> Revenir à la liste </button></a>
+    <button type="submit" class="btn btn-warning btn-fill pull-left" style="margin: left 100px;"><i class="fa fa-save"></i> Sauvegarder </button>
+    <div class="clearfix"></div>
+</form>
+
+</div>
+</div>

@@ -12,7 +12,7 @@
                         <h4 class="title" color="red">Table Des Phases </h4>
                         <br>
 
-                        <a href="/#/addPhase"><button class="btn btn-warning btn-fill pull-left" type="button" data-toggle="tooltip" data-placement="top" title="Ajouter une phase"><i class="fa fa-plus"></i> Nouvelle Phase </button></a>
+                        <a href="admin/addPhase"><button class="btn btn-warning btn-fill pull-left" type="button" data-toggle="tooltip" data-placement="top" title="Ajouter une phase"><i class="fa fa-plus"></i> Nouvelle Phase </button></a>
 
                    
                     </div>
@@ -44,7 +44,7 @@
                                         <td>{{phase.etat}}</td>
                                         <td>{{phase.projet['id']}}</td>
 
-                                        <a href="/#/editPhase/{{phase.id}}"><button class="btn btn-warning btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Editer"><i class="fa fa-edit"></i></button></a>
+                                        <a href="admin/editPhase/{{phase.id}}"><button class="btn btn-warning btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Editer"><i class="fa fa-edit"></i></button></a>
                                         <button (click)="delete(phase.id)" class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Supprimer"><i class="fa fa-trash"></i></button>
                                       </tr>
 

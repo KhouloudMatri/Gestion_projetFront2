@@ -1,8 +1,8 @@
-import { Location } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
+
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TasksService } from '../services/tasks.service';
 
 @Component({
   selector: 'app-edit-competence',
@@ -11,48 +11,48 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class EditCompetenceComponent implements OnInit {
 
-  competenceForm !: FormGroup;
-  URL = "http://localhost:8082/api/competences";
+  competenceForm!: FormGroup;
+  
 
-  constructor(private http : HttpClient , private route : ActivatedRoute , private _location: Location) { }
+  constructor(private service : TasksService , private route : ActivatedRoute , private root: Router,private build:FormBuilder) {
+    this.competenceForm = this.build.group({
+      nom:new FormControl(this.comp?.nom||"")
+    
+    })
+   }
 
   id = this.route.snapshot.paramMap.get("id");
-  nom:any;
+comp:any
 
   ngOnInit(): void {
-
-
-    this.http.get(this.URL+"/"+this.id).subscribe((res:any)=>{
-      this.nom = res.nom
-     
-
-      this.competenceForm = new FormGroup({
-
-        nom:new FormControl(this.nom,Validators.required)
+    this.service.getComp(this.id).subscribe(res=>{
+      console.log(res)
+      this.comp=res
+      this.competenceForm = this.build.group({
+        nom:new FormControl(this.comp?.nom||"")
       
       })
+  })
 
-    })
+   
 
   }
 
   submit(){
     
     if(this.competenceForm.valid){
-
-      this.http.put(this.URL+"/"+this.id,this.competenceForm.value).subscribe(res=>{
-        console.log(res);
-        this._location.back();
-      })
-
-
+      let data=this.competenceForm.getRawValue()
+console.log(data)
+this.service.updatecompetence(this.id,data).subscribe(res=>{
+  if(res){
+    this.root.navigateByUrl('admin/competence')
+  }
+})
     }
 
   }
 
-  back(){
-    this._location.back();
-  }
+ 
 
 }
 
